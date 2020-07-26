@@ -83,7 +83,7 @@ Some other libraries have the developer assign **costs** to parts of the schema,
 and [graphql-query-complexity](https://github.com/ivome/graphql-query-complexity) does it based on each *field*.
 
 Adding up costs may work for some backends, but it does not always faithfully represent the complexity.
-By adding the costs at each depth, it's as if the complexity is increasing lineraly with depth.
+By adding the costs at each depth, it's as if the complexity is increasing linearly with depth.
 Sometimes the complexity actually increases **exponentially** with depth, for example if requesting a field means doing another SQL `JOIN`.
 
 This library validates the total depth of the queries (and mutations).
@@ -230,6 +230,6 @@ Creates a validator for the GraphQL query depth
 | --- | --- | --- |
 | maxDepth | <code>Number</code> | The maximum allowed depth for any operation in a GraphQL document. |
 | [options] | <code>Object</code> |  |
-| options.ignore | <code>Array.&lt;(String\|RegExp\|function())&gt;</code> | Stops recursive depth checking based on a field name. Either a string or regexp to match the name, or a function that reaturns a boolean. |
+| options.ignore | <code>Array.&lt;(String\|RegExp\|function())&gt;</code> | Stops recursive depth checking based on a field name. Either a string or regexp to match the name, or a function that returns a boolean. |
 | [callback] | <code>function</code> | Called each time validation runs. Receives an Object which is a map of the depths for each operation. |
 
